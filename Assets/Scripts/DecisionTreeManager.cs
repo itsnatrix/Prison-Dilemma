@@ -16,8 +16,10 @@ public class DecisionTreeManager : MonoBehaviour{
     //Setting game properties
     public Transform player;
 
-    //public int question = 0; //to implement
-    //public int guiltyCount = 0; //to implement
+    public int question = 0;
+    public string theQuestion = " ";
+    //public int guiltyCount = 0; 
+    public TMP_Text questionText;
 
     private ExampleList data;
     private Node tree;
@@ -29,6 +31,7 @@ public class DecisionTreeManager : MonoBehaviour{
         Debug.Log("Save file: " + SavePath);
         data = LoadExamples();
         RebuildTree();
+        questionSelector();
     }
 
     ExampleList LoadExamples(){
@@ -86,6 +89,7 @@ public class DecisionTreeManager : MonoBehaviour{
 
         if (Keyboard.current.enterKey.wasPressedThisFrame){
             Debug.Log("AI decides: " + Decide());
+            questionSelector();
         }
     }
 
@@ -93,9 +97,28 @@ public class DecisionTreeManager : MonoBehaviour{
     void Teach(string actionLearned){
         Learn(CurrentSituation(), actionLearned);
         Debug.Log($"Learned: {actionLearned} ({data.examples.Count} examples)");
+        questionSelector();
     }
 
     void OnApplicationQuit(){
         SaveExamples();
+    }
+
+    void questionSelector(){
+        if(question==3){
+            question = 0;
+        }
+        question += 1;
+        theQuestion = " ";
+        if(question==1){
+            theQuestion = "Where were you when the crime happened?";
+        }
+        else if(question==2){
+            theQuestion = "How well did you know the victim?";
+        }
+        else{
+            theQuestion = "How do we know you're being honest?";
+        }
+        questionText.text = theQuestion;
     }
 }
