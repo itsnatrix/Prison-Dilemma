@@ -1,0 +1,13 @@
+{
+  "examples": [
+    {"contradicts": "no", "detail": "high", "selfMentioned": "yes", "confess" : "no", "result" : "truth"},
+    {"contradicts": "no", "detail": "high", "selfMentioned": "no", "confess" : "no", "result" : "truth"},
+    {"contradicts": "yes", "detail": "high", "selfMentioned": "yes", "confess" : "no", "result" : "truth"},
+    {"contradicts": "no", "detail": "low", "selfMentioned": "yes", "confess" : "no", "result" : "truth"},
+    {"contradicts": "yes", "detail": "low", "selfMentioned": "no", "confess" : "no", "result" : "lie"},
+    {"contradicts": "yes", "detail": "low", "selfMentioned": "yes", "confess" : "no", "result" : "lie"},
+    {"contradicts": "no", "detail": "high", "selfMentioned": "yes", "confess" : "yes", "result" : "lie"},
+    {"contradicts": "no", "detail": "high", "selfMentioned": "no", "confess" : "yes", "result" : "lie"},
+    {"contradicts": "yes", "detail": "high", "selfMentioned": "yes", "confess" : "yes", "result" : "lie"}
+  ]
+}
