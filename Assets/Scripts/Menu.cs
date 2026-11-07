@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
     }
     public void OnLieDetectButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("LieDetector");
     }
 
     public void OnQuitButton()
