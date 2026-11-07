@@ -74,7 +74,7 @@ public class DecisionTreeManager : MonoBehaviour{
     }
 
     public string Decide(){
-        return tree == null ? "truth" : tree.Classify(CurrentSituation());
+        return tree == null ? "innocent" : tree.Classify(CurrentSituation());
     }
 
     public void Learn(SavedExample situation, string resultSaved){
